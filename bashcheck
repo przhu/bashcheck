@@ -1,5 +1,7 @@
 #!/bin/sh
 
+alias bash=${1:-/bin/bash}
+
 r=`x='() { :; }; echo x' bash -c ""`
 if [ -n "$r" ]; then
 	echo -e '\033[91mVulnerable to CVE-2014-6271 (original shellshock)\033[39m'
